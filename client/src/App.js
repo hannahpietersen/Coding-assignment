@@ -1,7 +1,9 @@
 import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 
 import List from "./components/List/List";
+import Details from "./components/Details/Details"
 
 
 
@@ -10,9 +12,16 @@ import List from "./components/List/List";
 
 function App() {
   return (
-    <div className="App">
-      <List />
-    </div>
+    <>
+    <Routes>
+      
+     
+      
+      <Route path='/' element={<List />}></Route>
+      <Route path='/details' element={<Details />}></Route>
+    
+      </Routes>
+    </>
   );
 }
 
