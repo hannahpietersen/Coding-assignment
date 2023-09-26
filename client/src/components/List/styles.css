@@ -1,0 +1,71 @@
+@media (max-width: 768px) {
+    table {
+      font-size: 14px;
+    }
+  }
+  
+  body {
+      font-family: Arial, sans-serif;
+      margin: 95px;
+
+  }
+
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-right: 10px; /* Add margin-right for spacing between boxes */
+  }
+  
+  .small-input {
+    width: 180px; /* Adjust the width of the small input */
+  }
+  
+  .filter-input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  .icon {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .input-box {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .search-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 7px; /* Adjust the margin as needed to separate icon from input */
+    fill: #333; /* Adjust the icon color */
+  }
+  
+  
