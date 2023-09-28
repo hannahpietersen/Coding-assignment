@@ -25,7 +25,6 @@ function List(props) {
   };
 
   const handleRegionChange = (e) => {
-    console.log(e.target.value);
     onRegionChange(e.target.value);
   };
 
