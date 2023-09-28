@@ -25,7 +25,7 @@ function List(props) {
   };
 
   const handleRegionChange = (e) => {
-    onRegionChange(e.target.value);
+    onRegionChange(e.target.value.trim());
   };
 
   const handleSort = (field, type) => {
@@ -33,27 +33,27 @@ function List(props) {
   };
 
   const handleMinNumber = (e) => {
-    const value = e.target.value;
+    const value = e.target.value.trim();
 
     if (!value) {
       onMinNumberChange(0);
     } else {
-      onMinNumberChange(Number(e.target.value));
+      onMinNumberChange(Number(e.target.value.trim()));
     }
   };
 
   const handleMaxNumber = (e) => {
-    const value = e.target.value;
+    const value = e.target.value.trim();
 
     if (!value) {
       onMaxNumberChange(Number.MAX_SAFE_INTEGER);
     } else {
-      onMaxNumberChange(Number(e.target.value));
+      onMaxNumberChange(Number(e.target.value.trim()));
     }
   };
 
   const handleSearchChange = (e) => {
-    onSearchChange(e.target.value);
+    onSearchChange(e.target.value.trim());
   };
 
   return (
@@ -87,9 +87,9 @@ function List(props) {
       <div className="range">
         <p>
           Population Range
-          <input type="text" className="box" placeholder="Min" onChange={handleMinNumber} />
+          <input type="number" className="box" placeholder="Min" onChange={handleMinNumber} />
           to
-          <input type="text" className="box" placeholder="Max" onChange={handleMaxNumber} />
+          <input type="number" className="box" placeholder="Max" onChange={handleMaxNumber} />
         </p>
       </div>
 
