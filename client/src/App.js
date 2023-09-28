@@ -76,7 +76,6 @@ function App() {
       }
       return 0;
     });
-    console.log(filteredCounties);
 
     setFilterList(filteredCounties);
   }, [countries, searchStr, minNumber, maxNumber, selectedRegion, sort]);

@@ -1,23 +1,16 @@
-from flask import Flask, request, send_from_directory
+from flask import Flask, send_from_directory
+from flask import render_template
 import requests
 from flask_cors import CORS
-import os
 
 app = Flask(__name__)
 CORS(app)
 
 
-build_path = os.path.join(os.path.dirname(
-    os.path.abspath(__file__)), '..', 'client', 'build')
-
-
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def serve(path):
-    if path and path != 'favicon.ico' and path != 'manifest.json':
-        return send_from_directory('client/build', path)
-    else:
-        return send_from_directory('client/build', 'index.html')
+@app.route('/')
+@app.route('/<value>')
+def serve(value="default"):
+    return render_template('index.html')
 
 
 @app.route('/api/get_countries', methods=['GET'])
@@ -35,4 +28,4 @@ def get_countries():
 
 
 if __name__ == '__main__':
-    app.run(use_reloader=True, port=5000, threaded=True)
+    app.run()

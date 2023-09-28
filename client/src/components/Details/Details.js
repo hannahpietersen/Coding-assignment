@@ -10,8 +10,6 @@ function Details(props) {
 
   const country = list.find((item) => item.cca2 === params.id);
 
-  console.log(country);
-
   if (!country) {
     return null;
   } else {

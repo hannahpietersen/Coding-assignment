@@ -34,22 +34,22 @@ function List(props) {
   };
 
   const handleMinNumber = (e) => {
-    const minNumber = Number(e.target.value);
+    const value = e.target.value;
 
-    if (!isNaN(minNumber)) {
-      onMinNumberChange(minNumber);
+    if (!value) {
+      onMinNumberChange(0);
     } else {
-      onMinNumberChange(null);
+      onMinNumberChange(Number(e.target.value));
     }
   };
 
   const handleMaxNumber = (e) => {
-    const maxNumber = Number(e.target.value);
+    const value = e.target.value;
 
-    if (!isNaN(maxNumber)) {
-      onMaxNumberChange(maxNumber);
-    } else {
+    if (!value) {
       onMaxNumberChange(Number.MAX_SAFE_INTEGER);
+    } else {
+      onMaxNumberChange(Number(e.target.value));
     }
   };
 
@@ -88,9 +88,9 @@ function List(props) {
       <div className="range">
         <p>
           Population Range
-          <input type="text" className="box" placeholder="Min" value={Number(minNumber)} onChange={handleMinNumber} />
+          <input type="text" className="box" placeholder="Min" onChange={handleMinNumber} />
           to
-          <input type="text" className="box" placeholder="Max" value={Number(maxNumber)} onChange={handleMaxNumber} />
+          <input type="text" className="box" placeholder="Max" onChange={handleMaxNumber} />
         </p>
       </div>
 
