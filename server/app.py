@@ -11,14 +11,17 @@ build_path = os.path.join(os.path.dirname(
     os.path.abspath(__file__)), '..', 'client', 'build')
 
 
-@app.route('/')
-def serve():
-    return send_from_directory(build_path, 'index.html')
-
-
-@app.route('/static/<path:filename>')
-def serve_static(filename):
-    return send_from_directory(os.path.join(build_path, 'static'), filename)
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
+    if path and path != 'favicon.ico' and path != 'manifest.json':
+        try:
+            return send_from_directory('client/build', path)
+        except:
+            return send_from_directory('client/build', 'index.html')
+     else:
+       
+        return send_from_directory('client/build', 'index.html')
 
 
 @app.route('/api/get_countries', methods=['GET'])
@@ -36,4 +39,4 @@ def get_countries():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(use_reloader=True, port=5000, threaded=True)
