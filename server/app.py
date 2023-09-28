@@ -15,12 +15,8 @@ build_path = os.path.join(os.path.dirname(
 @app.route('/<path:path>')
 def serve(path):
     if path and path != 'favicon.ico' and path != 'manifest.json':
-        try:
-            return send_from_directory('client/build', path)
-        except:
-            return send_from_directory('client/build', 'index.html')
-     else:
-       
+        return send_from_directory('client/build', path)
+    else:
         return send_from_directory('client/build', 'index.html')
 
 
