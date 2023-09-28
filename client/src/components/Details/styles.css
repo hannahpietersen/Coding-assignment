@@ -1,0 +1,56 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.image {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40vh;
+  gap: 40px;
+}
+
+.text {
+  display: flex;
+  gap: 40px;
+}
+
+.text-left,
+.text-right {
+  width: calc(50% - 10px);
+  text-align: left;
+}
+
+.text-right {
+  flex: 1;
+}
+
+.leaflet-container {
+  widows: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.leaflet-control-container {
+  position: absolute;
+  bottom: 0;
+}
+
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-tile-container,
+.leaflet-pane > svg,
+.leaflet-pane > canvas,
+.leaflet-zoom-box,
+.leaflet-image-layer,
+.leaflet-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.text p {
+  line-height: 40px;
+}
